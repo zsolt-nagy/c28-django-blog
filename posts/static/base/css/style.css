@@ -1,0 +1,12 @@
+body {
+    background-color: #080808;
+    color: whitesmoke;
+}
+
+.main-nav {
+    display: flex;
+}
+
+.nav-item {
+    padding: 1rem;
+}

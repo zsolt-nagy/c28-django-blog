@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<p>
+    There {{ count|pluralize:"is,are" }} {{ count }} 
+    blogpost{{ count|pluralize }} in the system.
+</p>
+{% for post in posts %}
+<p>
+    <a href="{% url 'post' post.id %}">
+        {{ post.title }} (<em>{{ post.author }}</em>)
+    </a>
+</p>
+{% endfor %}
+{% endblock %}

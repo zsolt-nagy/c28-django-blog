@@ -1,13 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Post</title>
-    </head>
-    <body>
-        <h1>Post</h1>
-        <p>There {{ count|pluralize:"is,are" }} {{ count }} blogpost{{ count|pluralize }} in the system.</p>
-    </body>
-</html>
+{% extends "base.html" %}
+
+{% block content %}
+{% if exists %}
+    <p>{{ post.author }} ({{ post.publish_date }})</p>
+    <p>{{ post.description }}</p>
+{% else %}
+    <p>Invalid post id. Try searching for a different post.</p>
+{% endif %}
+<p><a href="{% url 'posts' %}">Back to Posts</a></p>
+{% endblock %}
