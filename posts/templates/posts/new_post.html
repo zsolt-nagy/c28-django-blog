@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% if show_form %}
+    <form method="post" action="{% url 'new_post' %}">
+        {% csrf_token %}
+        <div class="form-row">
+            <label>
+                Title:
+                <input 
+                    type="text" 
+                    name="title" 
+                    required 
+                    pattern=".*\S+.*" 
+                    title="This field is required" />
+            </label>
+        </div>
+        <div class="form-row">
+            <label>
+                Author:
+                <input 
+                    type="text" 
+                    name="author" 
+                    required
+                    pattern=".*\S+.*" 
+                    title="This field is required" />
+            </label>
+        </div>
+        <div class="form-row">
+            <label>
+                Description:
+                <textarea 
+                    name="description" 
+                    cols="30" 
+                    rows="10" 
+                    required                    
+                    pattern=".*\S+.*" 
+                    title="This field is required"></textarea>
+            </label>
+        </div>        
+        <div class="form-row">
+            <button type="submit">Create Post</button>
+        </div>
+    </form>
+{% endif %}
+{% endblock %}

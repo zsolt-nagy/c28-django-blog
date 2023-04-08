@@ -1,6 +1,8 @@
 body {
     background-color: #080808;
     color: whitesmoke;
+    width: 600px;
+    margin: 0 auto;
 }
 
 .main-nav {
